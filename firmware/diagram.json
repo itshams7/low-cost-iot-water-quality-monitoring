@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Your Name",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_tds", "top": -150, "left": -250, "attrs": { "label": "TDS_sim" } },
+    { "type": "wokwi-potentiometer", "id": "pot_ph", "top": -150, "left": -100, "attrs": { "label": "pH_sim" } },
+    { "type": "wokwi-potentiometer", "id": "pot_turbidity", "top": -150, "left": 50, "attrs": { "label": "Turbidity_sim" } },
+    { "type": "board-ds18b20", "id": "temp1", "top": 150, "left": -150, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": 150, "left": -80, "rotate": 90, "attrs": { "value": "4700" } },
+    { "type": "wokwi-nrf24l01", "id": "radio1", "top": 100, "left": 300, "attrs": {} }
+  ],
+  "connections": [
+    [ "pot_tds:SIG", "uno:A0", "green", [] ],
+    [ "pot_tds:VCC", "uno:5V", "red", [] ],
+    [ "pot_tds:GND", "uno:GND.1", "black", [] ],
+
+    [ "pot_ph:SIG", "uno:A1", "green", [] ],
+    [ "pot_ph:VCC", "uno:5V", "red", [] ],
+    [ "pot_ph:GND", "uno:GND.1", "black", [] ],
+
+    [ "pot_turbidity:SIG", "uno:A2", "green", [] ],
+    [ "pot_turbidity:VCC", "uno:5V", "red", [] ],
+    [ "pot_turbidity:GND", "uno:GND.1", "black", [] ],
+
+    [ "temp1:VCC", "uno:5V", "red", [] ],
+    [ "temp1:GND", "uno:GND.1", "black", [] ],
+    [ "temp1:1WIRE", "uno:2", "blue", [] ],
+    [ "r1:1", "uno:5V", "red", [] ],
+    [ "r1:2", "uno:2", "blue", [] ],
+
+    [ "radio1:VCC", "uno:3.3V", "red", [] ],
+    [ "radio1:GND", "uno:GND.1", "black", [] ],
+    [ "radio1:CE", "uno:9", "orange", [] ],
+    [ "radio1:CSN", "uno:8", "yellow", [] ],
+    [ "radio1:SCK", "uno:13", "blue", [] ],
+    [ "radio1:MOSI", "uno:11", "purple", [] ],
+    [ "radio1:MISO", "uno:12", "green", [] ]
+  ]
+}
