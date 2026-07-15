@@ -110,6 +110,4 @@ Average current ≈ **7.5 mA**. On a single 2500 mAh 18650 Li-ion cell, this pro
 
 ---
 
-## 8. License
 
-MIT License (or your preferred choice) — update before publishing.
